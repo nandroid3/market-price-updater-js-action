@@ -1,0 +1,27 @@
+name: Run bot
+
+on:
+  #schedule:
+    # 2時間ごとに処理実行
+  #  - cron: "0 */12 * * *"
+  workflow_dispatch:
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          repository: https://github.com/nandroid3/market-price-updater-js
+          path: market-price-updater-js
+          token: ${{ secrets.GH_PAT }}
+   
+      - name: Package install
+        run: npm install
+        working-directory: market-price-updater-js
+
+      - name: Build
+        run: npm run daily
+        working-directory: market-price-updater-js
+        
