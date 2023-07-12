@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          repository: https://github.com/nandroid3/market-price-updater-js
+          repository: nandroid3/market-price-updater-js
           path: market-price-updater-js
           token: ${{ secrets.GH_PAT }}
    
