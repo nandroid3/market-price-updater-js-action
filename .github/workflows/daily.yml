@@ -26,5 +26,10 @@ jobs:
         working-directory: market-price-updater-js
         
       - name: Commit
-        run: git commit -am "update"
+        run: |
+          git config user.name  "nandroid3"
+          git config user.email "nandroid@xilab.org"
+          git add .
+          git commit -m "daily update"
+          git push
         working-directory: market-price-updater-js
