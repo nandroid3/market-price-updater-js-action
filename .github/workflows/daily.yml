@@ -24,12 +24,19 @@ jobs:
       - name: Run
         run: npm run daily
         working-directory: market-price-updater-js
+      - name: Check
+        run: |
+          pwd
+          ls
         
       - name: Commit
         run: |
-          git config user.name  "nandroid3"
-          git config user.email "nandroid@xilab.org"
-          git add .
-          git commit -m "daily update"
-          git push
+          if ! git diff --exit-code --quiet
+          then
+            git config user.name  github-actions
+            git config user.email github-actions@github.com
+            git add .
+            git commit -m "daily update"
+            git push
+          fi
         working-directory: market-price-updater-js
