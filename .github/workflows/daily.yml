@@ -42,4 +42,3 @@ jobs:
             git commit -m "daily update"
             git push
           fi
-        working-directory: market-price-updater-js
