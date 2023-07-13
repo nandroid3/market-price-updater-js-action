@@ -36,11 +36,8 @@ jobs:
         
       - name: Commit
         run: |
-          if ! git diff --exit-code --quiet
-          then
             git config user.name  github-actions
             git config user.email github-actions@github.com
             git add .
             git commit -m "daily update"
             git push
-          fi
