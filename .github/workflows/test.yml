@@ -1,0 +1,24 @@
+
+name: test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run
+        run: echo "Hello" > test.txt
+
+      - name: Commit
+        run: |
+          echo "commit test"
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "test"
+          git push
+          echo "commit done"
