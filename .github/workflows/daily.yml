@@ -10,7 +10,7 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Updater
         uses: actions/checkout@v3
         with:
           repository: nandroid3/market-price-updater-js
@@ -31,6 +31,8 @@ jobs:
           echo "----"
           echo "123" > test.txt
           ls
+      - name: Checkout Action
+        uses: actions/checkout@v3
         
       - name: Commit
         run: |
