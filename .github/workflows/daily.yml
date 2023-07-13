@@ -28,6 +28,7 @@ jobs:
         run: |
           pwd
           ls
+          echo "123" > test.txt
         
       - name: Commit
         run: |
