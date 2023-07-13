@@ -27,8 +27,10 @@ jobs:
       - name: Check
         run: |
           pwd
-          ls
+          ls market-price-updater-js
+          echo "----"
           echo "123" > test.txt
+          ls
         
       - name: Commit
         run: |
