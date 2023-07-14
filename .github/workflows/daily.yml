@@ -24,6 +24,7 @@ jobs:
       - name: Run
         run: npm run daily
         working-directory: market-price-updater-js
+        
       - name: Check
         run: |
           pwd
@@ -35,12 +36,13 @@ jobs:
           echo "----"
           echo "123" > test.txt
           ls
+          
       - name: Checkout Action
         uses: actions/checkout@v3
         
       - name: Copy files
         run: |
-          cp market-price-updater-js/data/ref/* ./data/ref/*
+          cp ./market-price-updater-js/data/ref/sp500.csv ./data/ref/sp500.csv
         
       - name: Commit
         run: |
