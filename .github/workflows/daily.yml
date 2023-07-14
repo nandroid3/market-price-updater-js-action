@@ -42,6 +42,11 @@ jobs:
         
       - name: Copy files
         run: |
+          pwd
+          echo "----"
+          ls
+          echo "----"
+          ls ./data
           cp ./data/ref/sp500.csv ../data/ref/sp500.csv
         working-directory: market-price-updater-js
         
