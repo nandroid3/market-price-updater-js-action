@@ -29,6 +29,10 @@ jobs:
           pwd
           ls market-price-updater-js
           echo "----"
+          ls market-price-updater-js/data
+          echo "----"
+          ls market-price-updater-js/data/ref
+          echo "----"
           echo "123" > test.txt
           ls
       - name: Checkout Action
