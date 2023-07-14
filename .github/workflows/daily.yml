@@ -35,9 +35,6 @@ jobs:
           echo "----"
           ls market-price-updater-js/data/ref
           echo "----"
-          
-      - name: Checkout Action
-        uses: actions/checkout@v3
         
       - name: Copy files
         run: |
@@ -45,8 +42,8 @@ jobs:
           echo "----"
           ls
           echo "----"
-          ls ./data
-          cp ./data/ref/sp500.csv ./data/ref/sp500_2.csv
+          ls ./data/ref
+          cp ./market-price-updater-js/data/ref/sp500.csv ./data/ref/sp500.csv
         
       - name: Commit
         run: |
