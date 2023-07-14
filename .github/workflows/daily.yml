@@ -17,6 +17,11 @@ jobs:
           path: market-price-updater-js
           token: ${{ secrets.GH_PAT }}
    
+      - name: Checkout Action
+        uses: actions/checkout@v3
+        with:
+          path: market-price-updater-js-action
+   
       - name: Package install
         run: npm install
         working-directory: market-price-updater-js
@@ -40,10 +45,9 @@ jobs:
         run: |
           pwd
           echo "----"
-          ls
+          ls market-price-updater-js-action
           echo "----"
-          ls ./data/ref
-          cp ./market-price-updater-js/data/ref/sp500.csv ./data/ref/sp500.csv
+          cp ./market-price-updater-js/data/ref/sp500.csv ./market-price-updater-js-action/data/ref/sp500.csv
         
       - name: Commit
         run: |
@@ -52,3 +56,4 @@ jobs:
           git add .
           git commit -m "daily update"
           git push
+        working-directory: market-price-updater-js-action
