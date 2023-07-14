@@ -28,14 +28,13 @@ jobs:
       - name: Check
         run: |
           pwd
-          ls market-price-updater-js
           echo "----"
-          ls market-price-updater-js/data
+          ls
+          echo "----"
+          ls market-price-updater-js
           echo "----"
           ls market-price-updater-js/data/ref
           echo "----"
-          echo "123" > test.txt
-          ls
           
       - name: Checkout Action
         uses: actions/checkout@v3
@@ -47,8 +46,7 @@ jobs:
           ls
           echo "----"
           ls ./data
-          cp ./data/ref/sp500.csv ../data/ref/sp500.csv
-        working-directory: market-price-updater-js
+          cp ./data/ref/sp500.csv ./data/ref/sp500_2.csv
         
       - name: Commit
         run: |
